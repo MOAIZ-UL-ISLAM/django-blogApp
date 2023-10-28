@@ -8,9 +8,10 @@ class CatagoryAdmin(admin.ModelAdmin):
     search_fields=('title',)
 
 class PostAdmin(admin.ModelAdmin):
-    list_display=('title','cat','post_id')
-
-
+    search_fields=('title',)
+    list_display=('title','post_id')
+    list_filter = ('cat',)
+    list_per_page=10
 # registered Models
 admin.site.register(Catagory, CatagoryAdmin)
 admin.site.register(Post, PostAdmin)
