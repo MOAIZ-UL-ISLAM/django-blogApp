@@ -10,8 +10,10 @@ class CatagoryAdmin(admin.ModelAdmin):
 class PostAdmin(admin.ModelAdmin):
     search_fields=('title',)
     list_display=('title','post_id')
-    list_filter = ('cat',)
+    list_filter = ('title',)
     list_per_page=10
+    class Media:
+        js=("https://cdn.tiny.cloud/1/qn2azvfald1vuf09eu8cw31k8fntgj2tg9ruqizpj0tlu5od/tinymce/6/tinymce.min.js",'js/static.js',)
 # registered Models
 admin.site.register(Catagory, CatagoryAdmin)
 admin.site.register(Post, PostAdmin)
