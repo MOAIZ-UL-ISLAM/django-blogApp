@@ -9,7 +9,7 @@ class CatagoryAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     search_fields=('title',)
-    list_display=('title','post_id')
+    list_display=('title','post_id','url')
     list_filter = ('title',)
     list_per_page=10
     class Media:
