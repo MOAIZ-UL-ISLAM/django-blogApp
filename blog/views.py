@@ -10,8 +10,11 @@ def index(request):
     }
     return render(request, 'blog/index.html', data)
 
-
+#single post from blog database
 def posts(request, url):
-    posts = Post.objects.get(url=url)
+    post = Post.objects.get(url=url)
     # print (posts)
-    return render(request, 'blog/posts.html', {'posts': posts})
+    data={
+        'post': post
+    }
+    return render(request, 'blog/post.html', data)

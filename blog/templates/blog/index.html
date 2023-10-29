@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col s12">
         {% for p in posts%}
-         {{p.content | safe}}
+         {{p.content | safe |truncatewords:55}}
           {%endfor%}
     </div>
   </div>
